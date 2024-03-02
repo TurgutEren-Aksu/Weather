@@ -21,4 +21,8 @@ class CoreLocation: NSObject,ObservableObject,CLLocationManagerDelegate{
 		isLoading = true
 		manager.requestLocation()
 	}
+	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+		location = locations.first?.coordinate
+		isLoading = false 
+	}
 }
