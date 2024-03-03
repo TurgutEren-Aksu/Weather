@@ -23,6 +23,10 @@ class CoreLocation: NSObject,ObservableObject,CLLocationManagerDelegate{
 	}
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 		location = locations.first?.coordinate
-		isLoading = false 
+		isLoading = false
+	}
+	func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+		print("Error geting location",error)
+		isLoading = false
 	}
 }
