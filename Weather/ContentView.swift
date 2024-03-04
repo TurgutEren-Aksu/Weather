@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+	
+	@StateObject var locationManager = CoreLocation()
+	
     var body: some View {
         VStack {
             Image(systemName: "globe")
