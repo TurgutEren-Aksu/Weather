@@ -16,7 +16,9 @@ struct ContentView: View {
            WelcomeView()
 				.environmentObject(locationManager)
         }
-        .padding()
+		.padding()
+		.background(Color(hue: 1.0, saturation: 0.500, brightness: 0.300))
+		.preferredColorScheme(.dark)
     }
 }
 
