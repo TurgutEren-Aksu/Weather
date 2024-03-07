@@ -10,7 +10,15 @@ import SwiftUI
 struct WelcomeView: View {
 	@EnvironmentObject var locationManager:CoreLocation
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+		VStack{
+			VStack{
+				Text("Welcome to the weather app")
+				Text("testtesttest")
+			}
+			.multilineTextAlignment(.center)
+			.padding()
+		}
+		.frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
