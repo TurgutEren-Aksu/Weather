@@ -24,6 +24,8 @@ class CoreLocation: NSObject,ObservableObject,CLLocationManagerDelegate{
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 		location = locations.first?.coordinate
 		isLoading = false
+		print(locations)
+		print(location)
 	}
 	func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
 		print("Error geting location",error)

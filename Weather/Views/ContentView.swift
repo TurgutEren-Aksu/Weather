@@ -13,6 +13,9 @@ struct ContentView: View {
 	
     var body: some View {
         VStack {
+			if let location = locationManager.location{
+				Text("Şu an buradasınız: \(location.latitude), \(location.longitude)")
+			}
            WelcomeView()
 				.environmentObject(locationManager)
         }
