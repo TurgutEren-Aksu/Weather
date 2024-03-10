@@ -15,9 +15,14 @@ struct ContentView: View {
         VStack {
 			if let location = locationManager.location{
 				Text("Şu an buradasınız: \(location.latitude), \(location.longitude)")
+			}else{
+				if locationManager.isLoading{
+					ProgressView()
+				}else{
+					WelcomeView()
+						.environmentObject(locationManager)
+				}
 			}
-           WelcomeView()
-				.environmentObject(locationManager)
         }
 		.padding()
 		.background(Color(hue: 1.0, saturation: 0.500, brightness: 0.300))
