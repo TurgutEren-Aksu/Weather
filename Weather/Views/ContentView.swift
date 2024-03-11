@@ -17,7 +17,7 @@ struct ContentView: View {
 				Text("Şu an buradasınız: \(location.latitude), \(location.longitude)")
 			}else{
 				if locationManager.isLoading{
-					ProgressView()
+					LoadingView()
 				}else{
 					WelcomeView()
 						.environmentObject(locationManager)
