@@ -14,5 +14,7 @@ class WeatherManager {
 		else {
 			fatalError("Yanlış URL")
 		}
+		let urlRequest = URLRequest(url: url)
+		
 	}
 }
