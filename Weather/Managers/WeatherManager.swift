@@ -22,3 +22,14 @@ class WeatherManager {
 		}
 	}
 }
+struct ResponseBody {
+	
+	var coord: CoordinatesResponse
+	
+	struct CoordinatesResponse {
+		var lon: Double
+		var lat: Double
+	}
+	
+	
+}
