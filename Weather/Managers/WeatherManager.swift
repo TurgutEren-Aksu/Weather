@@ -31,5 +31,12 @@ struct ResponseBody {
 		var lat: Double
 	}
 	
+	struct WeatherResponse {
+		var id:Double
+		var main:String
+		var description:String
+		var icon:String
+		
+	}
 	
 }
