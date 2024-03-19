@@ -48,5 +48,9 @@ struct ResponseBody {
 		var sea_level: Double
 		var grnd_level: Double
 	}
+	struct WindResponse {
+		var speed: Double
+		var deg: Double
+	}
 	
 }
