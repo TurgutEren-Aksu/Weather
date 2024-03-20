@@ -54,3 +54,9 @@ struct ResponseBody {
 	}
 	
 }
+extension ResponseBody.MainResponse{
+	var fellsLike: Double { return feels_like }
+	var tempMax: Double { return temp_max }
+	var tempMin: Double { return temp_min }
+	
+}
