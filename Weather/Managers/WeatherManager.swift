@@ -18,27 +18,33 @@ class WeatherManager {
 		let (data,response) = try await URLSession.shared.data(for: urlRequest)
 		guard (response as? HTTPURLResponse)?.statusCode == 200
 		else{
-			fatalError("Yanlış URL")
+			fatalError("Hava durumu verleri alınırken hata oluştu!")
 		}
+		let decodedData = try JSONDecoder().decode(ResponseBody.self, from: data)
 	}
 }
-struct ResponseBody {
+struct ResponseBody: Decodable {
 	
 	var coord: CoordinatesResponse
+	var weather: [WeatherResponse]
+	var main: MainResponse
+	var name: String
+	var wind: WindResponse
 	
-	struct CoordinatesResponse {
+	struct CoordinatesResponse:Decodable {
 		var lon: Double
 		var lat: Double
 	}
 	
-	struct WeatherResponse {
+	struct WeatherResponse:Decodable {
 		var id:Double
 		var main:String
 		var description:String
 		var icon:String
 		
 	}
-	struct MainResponse {
+	
+	struct MainResponse: Decodable {
 		var temp: Double
 		var feels_like: Double
 		var temp_min: Double
@@ -48,12 +54,14 @@ struct ResponseBody {
 		var sea_level: Double
 		var grnd_level: Double
 	}
-	struct WindResponse {
+	
+	struct WindResponse:Decodable {
 		var speed: Double
 		var deg: Double
 	}
 	
 }
+
 extension ResponseBody.MainResponse{
 	var fellsLike: Double { return feels_like }
 	var tempMax: Double { return temp_max }
