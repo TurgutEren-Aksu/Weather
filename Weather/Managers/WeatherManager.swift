@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 
 class WeatherManager {
-	func getCurrentWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees) async throws {
+	func getCurrentWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees) async throws -> ResponseBody {
 		guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=8443f3d3e74e2afc4ccbce5d8fcb6397")
 		else {
 			fatalError("Yanlış URL")
@@ -21,6 +21,8 @@ class WeatherManager {
 			fatalError("Hava durumu verleri alınırken hata oluştu!")
 		}
 		let decodedData = try JSONDecoder().decode(ResponseBody.self, from: data)
+		
+		return decodedData
 	}
 }
 struct ResponseBody: Decodable {
