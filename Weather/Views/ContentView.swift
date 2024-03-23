@@ -13,10 +13,22 @@ struct ContentView: View {
 	var weatherManager = WeatherManager()
 	@State var weather: ResponseBody?
 	
-    var body: some View {
-        VStack {
+	var body: some View {
+		VStack {
 			if let location = locationManager.location{
-				Text("Şu an buradasınız: \(location.latitude), \(location.longitude)")
+				if let weather = weather{
+					Text("Weather data fetched!")
+				}else{
+					LoadingView()
+						.task{
+							do{
+								weather = try await weatherManager
+									.getCurrentWeather(latitude: location.latitude, longitude: location.longitude)
+							}catch{
+								print("Error geting weather \(error)")
+							}
+						}
+				}
 			}else{
 				if locationManager.isLoading{
 					LoadingView()
@@ -25,13 +37,13 @@ struct ContentView: View {
 						.environmentObject(locationManager)
 				}
 			}
-        }
+		}
 		.padding()
 		.background(Color(hue: 1.0, saturation: 0.500, brightness: 0.300))
 		.preferredColorScheme(.dark)
-    }
+	}
 }
 
 #Preview {
-    ContentView()
+	ContentView()
 }
