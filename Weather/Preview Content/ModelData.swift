@@ -6,6 +6,9 @@
 //
 
 import Foundation
+
+var previewWeather: ResponseBody = load("weatherData.json")
+
 func load<T:Decodable>(_ filename: String) -> T {
 	let data: Data
 	guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
