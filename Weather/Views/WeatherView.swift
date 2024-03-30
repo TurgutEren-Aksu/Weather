@@ -30,12 +30,16 @@ struct WeatherView: View {
 							
 						}.frame(width: 150,alignment: .leading)
 						
+						Spacer()
 						
 						Text(weather.main.feels_like.roundDouble() + "°")
 							.font(.system(size: 100))
 							.fontWeight(.bold)
 							.padding()
 					}
+					Spacer()
+						.frame(height: 80)
+					
 				}.frame(maxWidth: .infinity)
 				
 			}.padding()
