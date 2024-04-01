@@ -11,14 +11,7 @@ struct WeatherView: View {
 	var weather: ResponseBody
 	var body: some View {
 		ZStack(alignment: .leading){
-			AsyncImage(url: URL(string: "https://images.hdqwalls.com/download/red-glowing-weather-4k-qj-2160x3840.jpg")){ image in
-			image
-					.resizable()
-					.aspectRatio(contentMode: .fit)
-					.edgesIgnoringSafeArea(.all)
-			} placeholder: {
-				ProgressView()
-			}
+			
 			VStack{
 				VStack(alignment: .leading, spacing: 5){
 					Text(weather.name)
@@ -48,7 +41,14 @@ struct WeatherView: View {
 					Spacer()
 						.frame(height: 80)
 					
-					
+					AsyncImage(url: URL(string: "https://images.hdqwalls.com/download/red-glowing-weather-4k-qj-2160x3840.jpg")){ image in
+					image
+							.resizable()
+							.aspectRatio(contentMode: .fit)
+							.frame(width: 350)
+					} placeholder: {
+						ProgressView()
+					}
 					Spacer()
 					
 				}.frame(maxWidth: .infinity)
