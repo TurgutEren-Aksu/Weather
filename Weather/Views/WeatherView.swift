@@ -56,6 +56,18 @@ struct WeatherView: View {
 			}.padding()
 				.frame(maxWidth: .infinity, alignment: .leading)
 			
+			VStack{
+				Spacer()
+				
+				VStack(alignment:.leading,spacing: 20){
+					
+				}.frame(maxWidth: .infinity,alignment: .leading)
+					.padding()
+					.padding(.bottom, 20)
+					.foregroundColor(Color(hue: 1.0, saturation: 0.500, brightness: 0.300))
+					.background(.white)
+			}
+			
 		}.edgesIgnoringSafeArea(.bottom)
 			.background(Color(hue: 1.0, saturation: 0.500, brightness: 0.300))
 			.preferredColorScheme(.dark)
