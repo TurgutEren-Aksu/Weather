@@ -66,6 +66,7 @@ struct WeatherView: View {
 					.padding(.bottom, 20)
 					.foregroundColor(Color(hue: 1.0, saturation: 0.500, brightness: 0.300))
 					.background(.white)
+					.cornerRadius(20, corners: [.topLeft,.topRight])
 			}
 			
 		}.edgesIgnoringSafeArea(.bottom)
