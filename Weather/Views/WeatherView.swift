@@ -64,6 +64,9 @@ struct WeatherView: View {
 						.bold()
 						.padding(.bottom)
 						
+					HStack{
+						
+					}
 					
 				}.frame(maxWidth: .infinity,alignment: .leading)
 					.padding()
