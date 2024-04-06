@@ -65,7 +65,7 @@ struct WeatherView: View {
 						.padding(.bottom)
 						
 					HStack{
-						
+						WeatherRow(logo: <#T##String#>, name: <#T##String#>, value: <#T##String#>)
 					}
 					
 				}.frame(maxWidth: .infinity,alignment: .leading)
