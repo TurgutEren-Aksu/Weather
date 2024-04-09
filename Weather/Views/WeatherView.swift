@@ -67,6 +67,7 @@ struct WeatherView: View {
 					HStack{
 						WeatherRow(logo: "thermometer", name: "Min Temp", value:(weather.main.tempMin.roundDouble()) + "°")
 						Spacer()
+						WeatherRow(logo: "thermometer", name: "Max Temp", value:(weather.main.tempMin.roundDouble()) + "°")
 					}
 					
 				}.frame(maxWidth: .infinity,alignment: .leading)
