@@ -69,6 +69,9 @@ struct WeatherView: View {
 						Spacer()
 						WeatherRow(logo: "thermometer", name: "Max Temp", value:(weather.main.tempMin.roundDouble()) + "°")
 					}
+					HStack{
+						WeatherRow(logo: "wind", name: "Wind speed", value:(weather.main.tempMin.roundDouble()) + "m/s")
+					}
 					
 				}.frame(maxWidth: .infinity,alignment: .leading)
 					.padding()
