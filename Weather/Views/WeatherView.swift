@@ -71,6 +71,7 @@ struct WeatherView: View {
 					}
 					HStack{
 						WeatherRow(logo: "wind", name: "Wind speed", value:(weather.main.tempMin.roundDouble()) + "m/s")
+						Spacer()
 					}
 					
 				}.frame(maxWidth: .infinity,alignment: .leading)
